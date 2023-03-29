@@ -16,6 +16,12 @@
   örnek output: ""
 */
 
+/**
+ * Dosya adını yol üzerinde ayırt ediyor ve döndürüyor
+ * @param {dosyaAdiBul} path 
+ * @returns Dosya adını döndürüyor.
+ */
+
 function dosyaAdiniBul(path) {
   const ayirma = path.split("/");
   const dosyaAdi = ayirma[ayirma.length - 1];
@@ -41,14 +47,25 @@ console.log(dosyaAdiniBul("C:/Users/PC/Desktop/1x"));
   örnek output: 104
 */
 
-const numbers2 = [109, 216, 288, 143, 71, 185, -278, 194, 5];
+/**
+ * Ortalama Bul!
+ * @param {Array<Number>} numbers 
+ * @returns Dizideki sayıların aritmatik ortalamasını döndürmekte.
+ */
 function ortalamaBul(numbers) {
   const sumNumbers = numbers.reduce((sayi, toplam) => sayi + toplam, 0);
   const ortNumbers = sumNumbers / numbers.length;
-  const ortNumbers1 = Math.ceil(ortNumbers);
-  return ortNumbers1;
-} console.log(ortalamaBul(numbers2))
+  return Math.ceil(ortNumbers);
+}
 
+const numbers2 = [109, 216, 288, 143, 71, 185, -278, 194, 5];
+console.log(ortalamaBul(numbers2))
+
+ortalamaBul()
+
+/**
+ *  2. YOL
+ */
 // const numbers2 = [109, 216, 288, 143, 71, 185, -278, 194, 5];
 // function ortalamaBul(numbers) {
 //   let toplam = 0;
@@ -79,19 +96,30 @@ function ortalamaBul(numbers) {
   örnek input:  [109, 216, 288, 143, 71, 185, -278, 194, 5]
   örnek output: [109, 216, 288, 143, 185, 194]
 */
-const sayiArry = [50, -26, 153, 7]
+
+/**
+ * ortalamadan büyük değerleri bulma fonksiyonu !
+ * @param {sayiArry <number>}sdize 
+ * @param {ortalamaBul} callback 
+ * @returns  ortalamadan büyük değerleri döndürüyor
+ */
+
 function ortalamadanBuyukleriBul(sdize, callback) {
   const ortalama1 = callback(sdize);
-  // const newSayi2 = sdize.filter((sayi) => sayi >= ortalama1);
-
-  // for (let i = 0; i < sdize.length; i++) {
-  //   if (sdize[i] >= ortalama1) {
-  //     newSayi2.push(sdize[i])
-  //   }
-  // }
   return sdize.filter((sayi) => sayi >= ortalama1);
 }
+
+const sayiArry = [50, -26, 153, 7]
 console.log(ortalamadanBuyukleriBul(sayiArry, ortalamaBul));
+
+
+// const newSayi2 = sdize.filter((sayi) => sayi >= ortalama1);
+
+// for (let i = 0; i < sdize.length; i++) {
+//   if (sdize[i] >= ortalama1) {
+//     newSayi2.push(sdize[i])
+//   }
+// }
 
 
 
